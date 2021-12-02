@@ -2,18 +2,17 @@ FILENAME = "inputs/day02.txt"
 
 
 def basic(input):
-    horizontal = 0
-    depth = 0
+    position, depth = 0, 0
     for command in input:
         direction, value = command.split(" ")
         value = int(value)
         if direction == "forward":
-            horizontal += value
+            position += value
         elif direction == "down":
             depth += value
         elif direction == "up":
             depth -= value
-    return horizontal * depth
+    return position * depth
 
 
 def advanced(input):
