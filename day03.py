@@ -19,11 +19,11 @@ def basic(input):
 def life_support_rating(input, criteria=1):
     value = input
     for i in range(len(input[0])):
-        common = 0
+        value_count = 0
         for line in value:
-            common += int(line[i])
-        common = criteria if common >= len(value) / 2 else not criteria
-        value = [r for r in value if int(r[i]) == common]
+            value_count += int(line[i])
+        most_common_value = criteria if value_count >= len(value) / 2 else not criteria
+        value = [r for r in value if int(r[i]) == most_common_value]
         if len(value) == 1:
             break
     return value[0]
